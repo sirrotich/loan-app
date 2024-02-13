@@ -23,7 +23,6 @@ def index():
 
     # 3. Todays Repayments Expected (for Active Loans)
     todays_repayments_expected = sum(loan.get_daily_repayment_amount() for loan in loans if loan.status == 'active' and loan.get_current_repayment_day() > 0)
-
     # Calculate daily repayment amount and repayment cycle for each loan
     for loan in loans:
         # Calculate the number of days between the start date and today
