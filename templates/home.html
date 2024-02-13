@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashFlow - Manage Your Loans</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-3xl font-bold leading-tight text-gray-900">
+                CashFlow
+            </h1>
+            <nav class="flex">
+                <!-- Navigation Links -->
+                <a href="#" class="text-gray-900 font-semibold px-3 py-2 text-sm">Dashboard</a>
+                <a href="#" class="text-gray-900 font-semibold px-3 py-2 text-sm">Loans</a>
+                <a href="#" class="text-gray-900 font-semibold px-3 py-2 text-sm">Repayments</a>
+                <a href="/customers" class="text-gray-900 font-semibold px-3 py-2 text-sm">Customers</a>
+                <a href="#" class="text-gray-900 font-semibold px-3 py-2 text-sm">Reports</a>
+            </nav>
+            <div class="flex items-center">
+                <!-- Filter -->
+                <div class="mr-4">
+                    <select
+                        class="block w-full bg-white border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option>All</option>
+                        <option>Active</option>
+                        <option>Paid</option>
+                        <option>Overdue</option>
+                    </select>
+                </div>
+                <!-- User Avatar -->
+                <div class="flex items-center">
+                    <img class="h-10 w-10 rounded-full" src="/path-to-your-image.jpg" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Greetings -->
+        <div class="px-4 sm:px-0">
+            <h1 class="text-3xl font-semibold text-gray-900 mb-4">Welcome back, Aaron Kiptoo!</h1>
+        </div>
+        <!-- Summary Cards -->
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            <!-- Card 1 -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                            <!-- Heroicon name: users -->
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h2a1 1 0 0 0 1-1V9a3 3 0 0 0-3-3h-1M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5m0-9a2 2 0 0 1-2-2 2 2 0 0 1 2-2h4a2 2 0 0 1 2 2 2 2 0 0 1-2 2" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Total Users
+                                </dt>
+                                <dd class="text-2xl font-bold text-gray-900">
+                                    {{total_users}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                            <!-- Heroicon name: cash -->
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 11a9 9 0 0 1 9-9h6a9 9 0 0 1 9 9v2a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 17h.01M7 21h.01M17 21h.01" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Total Amount Loaned
+                                </dt>
+                                <dd class="text-2xl font-bold text-gray-900">
+                                    Ksh {{ total_loans_amount }}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                            <!-- Heroicon name: receipt-refund -->
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 17h.01M7 21h.01M17 21h.01M21 13.586l-2.293-2.293a1 1 0 0 0-1.414 0L15 13.172V7a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v6.172l-2.293-2.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.421.014L12 13.415l2.293 2.293a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 0-1.414z" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Today Expected Payment
+                                </dt>
+                                <dd class="text-2xl font-bold text-gray-900">
+                                    Ksh {{ todays_repayments_expected }}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Loan Table -->
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h2 class="text-lg font-semibold text-gray-900 mb-4"> All Loan(s) Progress</h2>
+
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Customer
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Loan Amount
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Daily re-Payment
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Start Date
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Repayment Cycle
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    action
+                                </th>
+                            </tr>
+
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            {% for loan in loans %}
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">{{ loan.user.name }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Ksh {{ loan.loan_amount }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">ksh {{ loan.daily_repayment_amount }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ loan.start_date }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ loan.repayment_cycle }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        {{ loan.status }}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <a href="/user/{{ loan.user.id }}"
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-grey-800">
+                                        VIEW
+                                    </a>
+                                </td>
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
