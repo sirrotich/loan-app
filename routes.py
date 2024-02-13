@@ -11,6 +11,7 @@ def issue_loan():
     # Implement loan issuance logic
     pass
 
+
 @app.route('/user/<int:user_id>')
 def view_user(user_id):
     # View user details and loan history
